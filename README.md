@@ -1,3 +1,4 @@
+![Tocsin](https://github.com/mahesh2996/Project-Work/blob/master/toc-osoc/IMG/Capture.PNG)
 <h2>Inspiration:</h2>
 <li>Item During the Drowsiness ,user of the computer may not shut down the system. It causes battery drainage and reduce the performance of system in long run. Automatic sleep mode is not possible during the processing of multimedia files in personal computer. To overcome this problem, we create the Tocsin.</li>
 
