@@ -1,8 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Aug 20 12:51:56 2019
-
-@author: Satya
+"""@author: Satya
 """
 '''This script detects if a person is drowsy or not,using dlib and eye aspect ratio
 calculations. Uses webcam video feed as input.'''
@@ -12,7 +8,7 @@ from scipy.spatial import distance
 from imutils import face_utils
 import pygame #For playing sound
 import time, cv2, dlib, pyautogui, os, datetime
-from tkinter import *
+from tkinter import Canvas, NW, END
 import tkinter as tk
 from tkinter import messagebox
 from PIL import ImageTk
@@ -60,10 +56,7 @@ def create_resource(ti=15,v="Hybernation",inac=5,asleep=2,fold="C:/Users/Satya/D
     #Extract indexes of facial landmarks for the left and right eye
     (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS['left_eye']
     (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS['right_eye']
-    
-    #Start webcam video capture
-    #Give some time for camera to initialize(not required)
-    #time.sleep(2)
+    #Start webcam video capture /Give some time for camera to initialize(not required) /time.sleep(2)
     a=1
     while(True):
         video_capture = cv2.VideoCapture(0)
@@ -76,7 +69,6 @@ def create_resource(ti=15,v="Hybernation",inac=5,asleep=2,fold="C:/Users/Satya/D
         print("***********")
 
         while(True):
-
             #Read each frame and flip it, and convert to grayscale
             ret, frame = video_capture.read()
             frame = cv2.flip(frame,1)
@@ -156,11 +148,10 @@ def create_resource(ti=15,v="Hybernation",inac=5,asleep=2,fold="C:/Users/Satya/D
                         COUNTER += 1
                         #If no. of frames is greater than threshold frames,
                         print(COUNTER,EYE_ASPECT_RATIO_CONSEC_FRAMES)
-                        if COUNTER >= EYE_ASPECT_RATIO_CONSEC_FRAMES and COUNTER>=asleep:
-                            if (a==1):
-                                pygame.mixer.music.play(-1)
-                                a=0
-                                cv2.putText(frame, "You are Drowsy", (150,200), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,0,255), 2)
+                        if COUNTER >= EYE_ASPECT_RATIO_CONSEC_FRAMES and COUNTER>=asleep and a == 1:
+                            pygame.mixer.music.play(-1)
+                            a=0
+                            cv2.putText(frame, "You are Drowsy", (150,200), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,0,255), 2)
                         if COUNTER >= EYE_ASPECT_RATIO_CONSEC_FRAMES and COUNTER>= (asleep+20):
                             pic = pyautogui.screenshot()
                             sour=fold+"screenshot.png"
@@ -168,20 +159,13 @@ def create_resource(ti=15,v="Hybernation",inac=5,asleep=2,fold="C:/Users/Satya/D
                             pygame.mixer.music.stop()
                             ft=1
                             break
-
-
-                            #time.sleep(10)
-                            #os.system('shutdown -s')
-
                     else:
                         pygame.mixer.music.stop()
                         a=1
                         COUNTER = 0
                 if ft==1:
                     break
-
             cv2.imshow('Video', frame)
-
             kp = cv2.waitKey(1)
             nt1=datetime.datetime.now().minute
             if(nt2<nt1):
@@ -199,24 +183,12 @@ def create_resource(ti=15,v="Hybernation",inac=5,asleep=2,fold="C:/Users/Satya/D
             pygame.mixer.music.stop()
 
             time.sleep(60*ti)
-
-        """nowt = datetime.datetime.now()
-            newt = nowt + datetime.timedelta(minutes=ti)
-            while(nowt<=newt):
-                print("&&&&&&&&&")
-                print(datetime.datetime.now(),newt)
-                if(cv2.waitKey(1) & 0xFF == ord('q')):
-                    flagg=1
-                    break """
     if ft==1:
-
         time.sleep(10)
         if v == "Hybernation":
             hyber()
         else:
             shut()
-
-
 
 #Show video feed
 from pynput.keyboard import Key, Controller               
@@ -228,15 +200,14 @@ def dest():
         if cv2.VideoCapture.isOpened():
             try:
                 pygame.mixer.music.stop()
-            except:    
-                
+            except e1:    
                 time.sleep(5)
                 master.destroy()
-    except:
+    except e1:
         try:
             pygame.mixer.music.stop()     
             master.destroy()
-        except:
+        except e1:
             master.destroy()
 
 
@@ -292,7 +263,7 @@ tk.Button(master, text='Tocsin 1.O', command=lambda:create_resource(ti=int(e1.ge
                                                                sticky=tk.W,
                                                                padx=10, pady=10)
 
-#tk.Button(master, text='Tocsin 1.o', command=create_resource).pack(side=TOP, anchor=W, fill=X, expand=YES)
+#tk.Button(master, text='Tocsin', command=create_resource).pack(side=TOP, anchor=W, fill=X, expand=YES)
 tk.Button(master, 
           text='Quit',
           command=dest).grid(row=7,column=2,sticky=tk.W,padx=10, pady=10)
