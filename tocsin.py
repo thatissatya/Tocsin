@@ -62,8 +62,6 @@ def create_resource(ti=15,v="Hybernation",inac=5,asleep=2,fold="C:/Users/Satya/D
     (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS['right_eye']
     
     #Start webcam video capture
-
-    
     #Give some time for camera to initialize(not required)
     #time.sleep(2)
     a=1
