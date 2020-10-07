@@ -45,7 +45,7 @@ def create_resource(ti=15,v="Hybernation",inac=5,asleep=2,fold="C:/Users/Satya/D
         A = distance.euclidean(eye[1], eye[5])
         B = distance.euclidean(eye[2], eye[4])
         C = distance.euclidean(eye[0], eye[3])
-    
+        # EAR = eye_aspect_ratio
         ear = (A+B) / (2*C)
         return ear
     
