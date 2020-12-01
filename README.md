@@ -16,7 +16,7 @@
 <li>Increase the system performance in long run</li>
 <li>Help the user to find last activate section in multimedia file by storing the screen shot of multimedia file.</li>
 <li>user friendly application interface which provide the easy customization to user.</li>
-</h2>Future Scope:</h2>
+<h2>Future Scope:</h2>
 <li>Tocsin is window based standalone application.in future model will come up with support of Android application.</li>
 
 
