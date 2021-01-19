@@ -13,7 +13,7 @@ def gui():
     image = ImageTk.PhotoImage(Image.open("b1.jpg"))  # Logo for the Applications
     canvas.create_image(0, 0, anchor=NW, image=image)
     canvas.grid(row=0, column=1, padx=10, pady=10)
-    OPTIONS = ["Hybernation", "Shutdown", "Suspend0", "Hybrid Sleep"]  # Various Options for the System Status
+    OPTIONS = ["Hybernation", "Shutdown", "Suspend", "Hybrid Sleep"]  # Various Options for the System Status
     tk.Label(master, text="System State:", font=("Helvetica", 12)).grid(row=2, column=0)
     variable = tk.StringVar(master)
     variable.set(OPTIONS[0])  # default value

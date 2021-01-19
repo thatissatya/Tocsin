@@ -16,7 +16,7 @@ def hybernation_and_suspend():
     os.system("systemctl hybrid-sleep")
 
 
-# System Commands:   Only for Linux Users....................................
+# System Commands:  for Linux 
 #   is-system-running                   Check whether system is fully running
 #   default                             Enter system default mode
 #   rescue                              Enter system rescue mode
