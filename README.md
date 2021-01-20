@@ -1,5 +1,3 @@
-![Tocsin](https://github.com/satya2436/Tocsin/blob/master/IMG/Before.png)
-![Tocsin](https://github.com/satya2436/Tocsin/blob/master/IMG/After.png)
 <h2>Inspiration:</h2>
 <li>During the Drowsiness ,user of the computer may not shut down the system. It causes battery drainage and reduce the performance of system in long run. Automatic sleep mode is not possible during the processing of multimedia files in personal computer. To overcome this problem, we create the Tocsin.</li>
 
