@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import Canvas, NW, END, messagebox
 from PIL import ImageTk, Image
-from videoFeed import dest
-from resource_Access import create_resource
+from utils.videoFeed import dest
+from utils.resource_Access import create_resource
 
 def gui():
     master = tk.Tk()

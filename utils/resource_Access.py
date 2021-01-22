@@ -4,7 +4,7 @@ from imutils import face_utils
 from scipy.spatial import distance
 from tkinter import Canvas, NW, END, messagebox
 import time, cv2, dlib, pyautogui, os, datetime, pygame
-import changeStatus # for Different System modes.
+from utils.changeStatus import * # for Different System modes.
 
 def create_resource(ti=15, v="Hybernation", inac=5, asleep=2, fold="/home/satya/Pictures"):
     # Initialize Pygame and load music
