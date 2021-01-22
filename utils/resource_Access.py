@@ -10,7 +10,7 @@ def create_resource(ti=15, v="Hybernation", inac=5, asleep=2, fold="/home/satya/
     # Initialize Pygame and load music
     ft = 0
     pygame.mixer.init()
-    pygame.mixer.music.load('faded.ogg')
+    pygame.mixer.music.load(r'assets\audio\faded.ogg')
     # Minimum threshold of eye aspect ratio below which alarm is triggerd
     EYE_ASPECT_RATIO_THRESHOLD = 0.3
     # Minimum consecutive frames for which eye ratio is below threshold for alarm to be triggered
@@ -21,7 +21,7 @@ def create_resource(ti=15, v="Hybernation", inac=5, asleep=2, fold="/home/satya/
     flag1 = True
     global inace
     # Load face cascade which will be used to draw a rectangle around detected faces.
-    face_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+    face_cascade = cv2.CascadeClassifier(r"assets\haarcascades\haarcascade_frontalface_default.xml")
     # This function calculates and return eye aspect ratio
     def eye_aspect_ratio(eye):
         A = distance.euclidean(eye[1], eye[5])
@@ -32,7 +32,7 @@ def create_resource(ti=15, v="Hybernation", inac=5, asleep=2, fold="/home/satya/
         return ear
     # Load face detector and predictor, uses dlib shape predictor file
     detector = dlib.get_frontal_face_detector()
-    predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+    predictor = dlib.shape_predictor(r'assets\shape_predictor_68_face_landmarks.dat')
     # Extract indexes of facial landmarks for the left and right eye
     (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS['left_eye']
     (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS['right_eye']

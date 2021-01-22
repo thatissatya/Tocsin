@@ -10,7 +10,7 @@ def gui():
     master.title('Interface')
     # master.configure(background="#FBF985")
     canvas = Canvas(master, width=200, height=109)
-    image = ImageTk.PhotoImage(Image.open("b1.jpg"))  # Logo for the Applications
+    image = ImageTk.PhotoImage(Image.open(r"assets\images\b1.jpg"))  # Logo for the Applications
     canvas.create_image(0, 0, anchor=NW, image=image)
     canvas.grid(row=0, column=1, padx=10, pady=10)
     OPTIONS = ["Hybernation", "Shutdown", "Suspend", "Hybrid Sleep"]  # Various Options for the System Status
@@ -32,7 +32,7 @@ def gui():
     tk.Label(master, text="Allow Sleep(counter):", font=("Helvetica", 12)).grid(row=5, column=0)
     e3.grid(row=5, column=1, padx=10, pady=10)
     e4 = tk.Entry(master)
-    e4.insert(END, '/home')
+    e4.insert(END, r'C:\users\satya\Documents')
     tk.Label(master, text="Screen Capture Folder:", font=("Helvetica", 12)).grid(row=6, column=0)
     e4.grid(row=6, column=1, padx=10, pady=10)
     tk.Button(master, text='Tocsin 1.O',
