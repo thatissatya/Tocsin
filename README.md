@@ -20,3 +20,4 @@
 
 <h2>Limitations:</h2>
 <li>Tocsin only work in day time. During the night time, Tocsin may fail because of low light mode.it can overcome by night vision camera.</li>
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=satyap2436)](https://github.com/anuraghazra/github-readme-stats)
